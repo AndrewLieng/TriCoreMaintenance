@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataCommandList>
+  <DataCommand EntityName="TriCoreMaintenance" Name="Cleanup" Type="Execute" Text="DELETE FROM Library WHERE Name = 'TriCoreMaintenance'"/>
+  <DataCommand EntityName="TriCoreMaintenance" Name="GetAllTransfersForPetrolCanada" Type="Query" Text="
+    Select ft.* From FluidTransfer ft 
+      Join Vendor v On ft.VendorID = v.ID
+    Where v.VendorNum = 'Petro-Canada'
+    Order By TransferDate Desc"/>
+</DataCommandList>
